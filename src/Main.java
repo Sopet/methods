@@ -1,3 +1,5 @@
+import java.time.LocalDate;
+
 public class Main {
 
     // Метод к заданию 1
@@ -16,21 +18,11 @@ public class Main {
     // Создаю метод для определения обновления системы
     public static void checkDeviceYear(int clientDeviceYear, int clientOS) {
         // Объявляю условный оператор на определение года для обновления
-        if (clientDeviceYear < 2015) {
-            // Объявляю условный оператор на определение операционной системы
-            if (clientOS == 0) {
-                System.out.println("Установите облегченную версию приложения для iOS по ссылке.");
-            } else if (clientOS == 1) {
-                System.out.println("Установите облегченную версию приложения для Android по ссылке.");
-            }
-        } else {
-            // Объявляю условный оператор на определение операционной системы
-            if (clientOS == 0) {
-                System.out.println("Установите приложение для iOS по ссылке.");
-            } else if (clientOS == 1) {
-                System.out.println("Установите приложение для Android по ссылке.");
-            }
-        }
+        boolean isOldDevice = clientDeviceYear < 2015;
+        String osMessage = (clientOS == 0) ? "для iOS" : "для Android";
+        String versionMessage = isOldDevice ? "облегченную версию" : "обычную версию";
+
+        System.out.println("Установите " + versionMessage + " приложения " + osMessage + " по ссылке.");
     }
 
 
