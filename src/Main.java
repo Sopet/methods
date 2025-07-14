@@ -17,7 +17,6 @@ public class Main {
     // Метод к заданию 2
     // Создаю метод для определения обновления системы
     public static void checkDeviceYear(int clientDeviceYear, int clientOS) {
-        // Объявляю условный оператор на определение года для обновления
         boolean isOldDevice = clientDeviceYear < 2015;
         String osMessage = (clientOS == 0) ? "для iOS" : "для Android";
         String versionMessage = isOldDevice ? "облегченную версию" : "обычную версию";
